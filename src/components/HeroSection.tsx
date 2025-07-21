@@ -14,7 +14,7 @@ const HeroSection = () => {
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0" style={{
       backgroundImage: `url(${heroBackground})`,

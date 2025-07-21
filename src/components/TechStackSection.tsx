@@ -58,7 +58,7 @@ const TechStackSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 relative">
+    <section id="tech" className="py-20 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
