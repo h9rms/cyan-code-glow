@@ -56,10 +56,16 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <button className="glass-card glass-card-hover px-8 py-4 rounded-lg text-primary border-primary/30 hover:border-primary/60 transition-all duration-300">
+          <button 
+            onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+            className="glass-card glass-card-hover px-8 py-4 rounded-lg text-primary border-primary/30 hover:border-primary/60 transition-all duration-300"
+          >
             View My Work
           </button>
-          <button className="gradient-primary px-8 py-4 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow">
+          <button 
+            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="gradient-primary px-8 py-4 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow"
+          >
             Get In Touch
           </button>
         </div>
