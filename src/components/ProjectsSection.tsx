@@ -3,7 +3,7 @@ const ProjectsSection = () => {
   const featuredProject = {
     title: "Wanderlust Grid Blog",
     description: "A modern, responsive blog platform showcasing travel content with beautiful grid layouts and smooth animations. Built with React and modern web technologies.",
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+    image: "/lovable-uploads/1c909cf2-3c0d-44e9-be04-de5301e4a2d2.png",
     liveUrl: "https://wanderlust-grid-bloom.lovable.app/",
     githubUrl: "#",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
