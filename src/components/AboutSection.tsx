@@ -1,47 +1,47 @@
 import { Calendar, Code, Zap, Target } from 'lucide-react';
-
 const AboutSection = () => {
-  const timeline = [
-    {
-      year: "2022",
-      title: "Started Coding Journey",
-      description: "Began learning web development with HTML, CSS, and JavaScript",
-      icon: Code
-    },
-    {
-      year: "2023",
-      title: "Frontend Mastery",
-      description: "Mastered React, TypeScript, and modern frontend frameworks",
-      icon: Zap
-    },
-    {
-      year: "2024",
-      title: "Full Stack Development",
-      description: "Expanded to backend with Node.js, databases, and cloud services",
-      icon: Target
-    }
-  ];
-
-  const skills = [
-    { name: "React/TypeScript", level: 95 },
-    { name: "Node.js", level: 85 },
-    { name: "JavaScript", level: 95 },
-    { name: "Python", level: 80 },
-    { name: "CSS/Tailwind", level: 95 },
-    { name: "Git/GitHub", level: 90 }
-  ];
-
-  return (
-    <section id="about" className="py-20 px-6 relative">
+  const timeline = [{
+    year: "2022",
+    title: "Started Coding Journey",
+    description: "Began learning web development with HTML, CSS, and JavaScript",
+    icon: Code
+  }, {
+    year: "2023",
+    title: "Frontend Mastery",
+    description: "Mastered React, TypeScript, and modern frontend frameworks",
+    icon: Zap
+  }, {
+    year: "2024",
+    title: "Full Stack Development",
+    description: "Expanded to backend with Node.js, databases, and cloud services",
+    icon: Target
+  }];
+  const skills = [{
+    name: "React/TypeScript",
+    level: 95
+  }, {
+    name: "Node.js",
+    level: 85
+  }, {
+    name: "JavaScript",
+    level: 95
+  }, {
+    name: "Python",
+    level: 80
+  }, {
+    name: "CSS/Tailwind",
+    level: 95
+  }, {
+    name: "Git/GitHub",
+    level: 90
+  }];
+  return <section id="about" className="py-20 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A passionate developer from Frankfurt, Germany, dedicated to creating 
-            exceptional digital experiences with cutting-edge technologies.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">A passionate developer near Frankfurt, Germany, dedicated to creating exceptional digital experiences with cutting-edge technologies.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -52,8 +52,7 @@ const AboutSection = () => {
               My Journey
             </h3>
             
-            {timeline.map((item, index) => (
-              <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
+            {timeline.map((item, index) => <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
                 <div className="flex items-start gap-4">
                   <div className="glass-card p-3 rounded-lg border-primary/30">
                     <item.icon className="w-6 h-6 text-primary" />
@@ -71,8 +70,7 @@ const AboutSection = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Skills */}
@@ -83,23 +81,18 @@ const AboutSection = () => {
             </h3>
             
             <div className="space-y-6">
-              {skills.map((skill, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl">
+              {skills.map((skill, index) => <div key={index} className="glass-card p-6 rounded-xl">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-foreground font-semibold">{skill.name}</span>
                     <span className="text-primary font-bold">{skill.level}%</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-                    <div 
-                      className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out"
-                      style={{ 
-                        width: `${skill.level}%`,
-                        animation: `slideIn 1.5s ease-out ${index * 0.2}s both`
-                      }}
-                    />
+                    <div className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out" style={{
+                  width: `${skill.level}%`,
+                  animation: `slideIn 1.5s ease-out ${index * 0.2}s both`
+                }} />
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="glass-card p-6 rounded-xl mt-8">
@@ -107,22 +100,15 @@ const AboutSection = () => {
                 Currently Learning
               </h4>
               <div className="flex flex-wrap gap-2">
-                {["Docker", "Kubernetes", "GraphQL", "Next.js"].map((tech) => (
-                  <span 
-                    key={tech}
-                    className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm"
-                  >
+                {["Docker", "Kubernetes", "GraphQL", "Next.js"].map(tech => <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm">
                     {tech}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
