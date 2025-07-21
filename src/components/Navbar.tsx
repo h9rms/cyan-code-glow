@@ -15,10 +15,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#hero' },
-    { name: 'Über mich', href: '#about' },
+    { name: 'About', href: '#about' },
     { name: 'Tech Stack', href: '#tech' },
-    { name: 'Projekte', href: '#projects' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
