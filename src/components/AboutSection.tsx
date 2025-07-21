@@ -105,7 +105,7 @@ const AboutSection = () => {
                 Currently Learning
               </h4>
               <div className="flex flex-wrap gap-2">
-                {["Docker", "Kubernetes", "GraphQL", "Next.js"].map(tech => <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm">
+                {["Docker", "Kubernetes", "GraphQL", "Next.js", "AI Engineering"].map(tech => <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm">
                     {tech}
                   </span>)}
               </div>
