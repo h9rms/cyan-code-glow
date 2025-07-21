@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import heroBackground from '@/assets/hero-bg.jpg';
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Full Stack Developer from Frankfurt";
-
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
@@ -16,36 +14,25 @@ const HeroSection = () => {
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      />
+      <div className="absolute inset-0 z-0" style={{
+      backgroundImage: `url(${heroBackground})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }} />
       
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background z-10" />
       
       {/* Floating particles */}
       <div className="particles-container z-20">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${8 + Math.random() * 4}s`
-            }}
-          />
-        ))}
+        {[...Array(30)].map((_, i) => <div key={i} className="particle" style={{
+        left: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 8}s`,
+        animationDuration: `${8 + Math.random() * 4}s`
+      }} />)}
       </div>
 
       {/* Main content */}
@@ -53,7 +40,7 @@ const HeroSection = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="block text-foreground mb-2">Hi, I'm</span>
-            <span className="gradient-text text-6xl md:text-8xl">Developer</span>
+            <span className="gradient-text text-6xl md:text-8xl">Hermann</span>
           </h1>
           
           <div className="text-xl md:text-2xl text-muted-foreground h-8 font-mono">
@@ -91,12 +78,12 @@ const HeroSection = () => {
         <div>&#125;;</div>
       </div>
 
-      <div className="absolute bottom-32 right-10 glass-card p-4 rounded-lg text-sm font-mono text-secondary opacity-70 floating-animation hidden lg:block" style={{ animationDelay: '2s' }}>
+      <div className="absolute bottom-32 right-10 glass-card p-4 rounded-lg text-sm font-mono text-secondary opacity-70 floating-animation hidden lg:block" style={{
+      animationDelay: '2s'
+    }}>
         <div>npm run build</div>
         <div className="text-green-400">✓ Build successful</div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
