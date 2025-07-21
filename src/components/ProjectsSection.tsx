@@ -5,7 +5,7 @@ const ProjectsSection = () => {
     description: "A modern, responsive blog platform showcasing travel content with beautiful grid layouts and smooth animations. Built with React and modern web technologies.",
     image: "/lovable-uploads/1c909cf2-3c0d-44e9-be04-de5301e4a2d2.png",
     liveUrl: "https://wanderlust-grid-bloom.lovable.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/h9rms/wanderlust-grid-bloom.git",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
     featured: true
   };
