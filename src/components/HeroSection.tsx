@@ -4,7 +4,7 @@ import heroBackground from '@/assets/hero-bg.jpg';
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Full Stack Developer from Frankfurt";
+  const fullText = "Full Stack Developer near Frankfurt";
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
