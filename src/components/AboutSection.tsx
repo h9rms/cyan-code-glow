@@ -15,6 +15,11 @@ const AboutSection = () => {
     title: "Full Stack Development",
     description: "Expanded to backend with Node.js, databases, and cloud services",
     icon: Target
+  }, {
+    year: "2025",
+    title: "Vibe Coding",
+    description: "Started exploring vibe coding tools and AI-powered development workflows",
+    icon: Zap
   }];
   const skills = [{
     name: "React/TypeScript",
