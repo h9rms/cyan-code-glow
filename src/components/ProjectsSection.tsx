@@ -70,7 +70,7 @@ const ProjectsSection = () => {
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </a>
-                  <a href={featuredProject.githubUrl} className="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-lg text-foreground border-primary/30 hover:border-primary/60 transition-colors duration-300">
+                  <a href={featuredProject.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-lg text-foreground border-primary/30 hover:border-primary/60 transition-colors duration-300">
                     <Github className="w-4 h-4" />
                     Code
                   </a>
