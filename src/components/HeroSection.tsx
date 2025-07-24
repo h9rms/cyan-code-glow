@@ -44,10 +44,7 @@ const HeroSection = () => {
       <div className="relative z-30 max-w-6xl mx-auto text-center px-4">
         
         {/* Floating Status Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 glass-morphism px-4 py-2 rounded-full border border-primary/30 neon-glow">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          <span className="text-sm font-medium text-primary font-primary">Available for freelance work</span>
-        </div>
+        
 
         {/* Main Title */}
         <div className="mb-8 space-y-4">
