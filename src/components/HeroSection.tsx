@@ -63,7 +63,7 @@ const HeroSection = () => {
         <div className="mb-8 space-y-4">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-primary leading-none">
             <span className="block text-foreground/90">Hi, I'm</span>
-            <span className="block holographic-text">Harmandeep</span>
+            <span className="block holographic-text">Hermann</span>
           </h1>
         </div>
 
