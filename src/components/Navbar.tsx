@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  const navAnimation = useScrollAnimation({ animation: 'slideUp', delay: 100, once: true });
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);

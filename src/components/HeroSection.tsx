@@ -1,16 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Full Stack Developer near Frankfurt";
-  
-  const titleAnimation = useScrollAnimation({ animation: 'fadeIn', delay: 200 });
-  const subtitleAnimation = useScrollAnimation({ animation: 'slideUp', delay: 400 });
-  const descriptionAnimation = useScrollAnimation({ animation: 'fadeIn', delay: 600 });
-  const buttonsAnimation = useScrollAnimation({ animation: 'slideUp', delay: 800 });
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
@@ -44,31 +38,19 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 max-w-4xl mx-auto text-center px-4">
-        <h1 
-          ref={titleAnimation.ref}
-          className={`text-5xl md:text-7xl font-bold font-primary mb-8 bg-gradient-primary bg-clip-text text-transparent ${titleAnimation.className}`}
-        >
+      <div className="relative z-30 max-w-4xl mx-auto text-center px-4 animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-bold font-primary mb-8 bg-gradient-primary bg-clip-text text-transparent">
           Harmandeep Singh
         </h1>
-        <div 
-          ref={subtitleAnimation.ref}
-          className={`text-xl md:text-2xl text-secondary-foreground mb-6 font-secondary min-h-[2rem] ${subtitleAnimation.className}`}
-        >
+        <div className="text-xl md:text-2xl text-secondary-foreground mb-6 font-secondary min-h-[2rem]">
           <span className="typing-animation">{displayText}</span>
           <span className="animate-pulse">|</span>
         </div>
-        <p 
-          ref={descriptionAnimation.ref}
-          className={`text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-secondary leading-relaxed ${descriptionAnimation.className}`}
-        >
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-secondary leading-relaxed">
           Passionate about creating innovative web solutions with modern technologies. 
           I bring ideas to life through clean code and thoughtful design.
         </p>
-        <div 
-          ref={buttonsAnimation.ref}
-          className={`flex flex-col sm:flex-row gap-4 justify-center ${buttonsAnimation.className}`}
-        >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg font-medium transform hover:scale-105 transition-transform"
