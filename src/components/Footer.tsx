@@ -13,21 +13,21 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+            <a href="https://github.com/h9rms" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
               <Github className="w-5 h-5" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-              
+              <Linkedin className="w-5 h-5" />
             </a>
             <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-              
+              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>
         
         <div className="mt-6 pt-6 border-t border-glass-border text-center">
           <p className="font-secondary text-sm text-muted-foreground">
-            © 2024. Built with React, TypeScript & Tailwind CSS.
+            © {new Date().getFullYear()}. All rights reserved. Built with React, TypeScript & Tailwind CSS.
           </p>
         </div>
       </div>
