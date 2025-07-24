@@ -41,13 +41,13 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-30 max-w-6xl mx-auto text-center px-4">
+      <div className="relative z-30 max-w-6xl mx-auto text-center px-4 pt-16 sm:pt-20 md:pt-24 lg:pt-32">
         
         {/* Floating Status Badge */}
         
 
         {/* Main Title */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-primary leading-none">
             <span className="block text-foreground/90">Hi, I'm</span>
             <span className="block holographic-text">Hermann</span>
@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
 
         {/* Animated Subtitle */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-secondary mb-4 min-h-[2rem] sm:min-h-[2.5rem] md:min-h-[3rem] flex items-center justify-center">
             <span className="typing-animation">{displayText}</span>
             <span className="animate-pulse text-primary ml-1">|</span>
@@ -63,7 +63,7 @@ const HeroSection = () => {
         </div>
 
         {/* Enhanced Description */}
-        <div className="mb-12 max-w-3xl mx-auto">
+        <div className="mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto">
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-secondary leading-relaxed mb-6 px-4 sm:px-0">
             Crafting exceptional digital experiences with modern technologies.
             <br />
@@ -71,7 +71,7 @@ const HeroSection = () => {
           </p>
           
           {/* Tech Highlights */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
             {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
                 {tech}
               </span>)}
@@ -79,7 +79,7 @@ const HeroSection = () => {
         </div>
 
         {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16">
           <Button onClick={() => document.getElementById('projects')?.scrollIntoView({
           behavior: 'smooth'
         })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
