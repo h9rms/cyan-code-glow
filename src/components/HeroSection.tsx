@@ -14,7 +14,7 @@ const HeroSection = () => {
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 bg-gradient-dark" />
       
