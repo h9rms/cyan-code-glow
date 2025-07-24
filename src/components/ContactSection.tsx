@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Mail, MapPin, ExternalLink, Send, CheckCircle } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,16 +9,44 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      toast({
+        title: "Nachricht gesendet!",
+        description: "Vielen Dank für Ihre Nachricht. Ich melde mich bald bei Ihnen.",
+      });
+
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error: any) {
+      console.error('Contact form error:', error);
+      toast({
+        title: "Fehler",
+        description: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -128,9 +158,13 @@ const ContactSection = () => {
                   <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none" placeholder="Tell me about your project..." />
                 </div>
 
-                <button type="submit" className="w-full gradient-secondary py-4 rounded-lg text-secondary-foreground font-semibold hover:scale-105 transition-transform duration-300 purple-glow flex items-center justify-center gap-2">
+                <button 
+                  type="submit" 
+                  disabled={isLoading}
+                  className="w-full gradient-secondary py-4 rounded-lg text-secondary-foreground font-semibold hover:scale-105 transition-transform duration-300 purple-glow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {isLoading ? 'Wird gesendet...' : 'Send Message'}
                 </button>
               </form>}
           </div>
