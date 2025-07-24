@@ -10,39 +10,42 @@ const ContactSection = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
+      const {
+        error
+      } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: formData.name,
           email: formData.email,
-          message: formData.message,
-        },
+          message: formData.message
+        }
       });
-
       if (error) {
         throw error;
       }
-
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
       toast({
         title: "Nachricht gesendet!",
-        description: "Vielen Dank für Ihre Nachricht. Ich melde mich bald bei Ihnen.",
+        description: "Vielen Dank für Ihre Nachricht. Ich melde mich bald bei Ihnen."
       });
-
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error: any) {
       console.error('Contact form error:', error);
       toast({
         title: "Fehler",
         description: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsLoading(false);
@@ -90,7 +93,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-foreground font-semibold font-primary">Email</p>
-                    <p className="text-muted-foreground font-secondary">developer@example.com</p>
+                    <p className="text-muted-foreground font-secondary">hermsdevelopment@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -158,11 +161,7 @@ const ContactSection = () => {
                   <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none font-secondary" placeholder="Tell me about your project..." />
                 </div>
 
-                <button 
-                  type="submit" 
-                  disabled={isLoading}
-                  className="w-full gradient-secondary py-4 rounded-lg text-secondary-foreground font-semibold hover:scale-105 transition-transform duration-300 purple-glow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 font-primary"
-                >
+                <button type="submit" disabled={isLoading} className="w-full gradient-secondary py-4 rounded-lg text-secondary-foreground font-semibold hover:scale-105 transition-transform duration-300 purple-glow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 font-primary">
                   <Send className="w-5 h-5" />
                   {isLoading ? 'Wird gesendet...' : 'Send Message'}
                 </button>
