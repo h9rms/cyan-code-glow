@@ -36,15 +36,15 @@ const ContactSection = () => {
         message: ''
       });
       toast({
-        title: "Nachricht gesendet!",
-        description: "Vielen Dank für Ihre Nachricht. Ich melde mich bald bei Ihnen."
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon!"
       });
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error: any) {
       console.error('Contact form error:', error);
       toast({
-        title: "Fehler",
-        description: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+        title: "Error",
+        description: "The message could not be sent. Please try again later.",
         variant: "destructive"
       });
     } finally {
@@ -163,7 +163,7 @@ const ContactSection = () => {
 
                 <button type="submit" disabled={isLoading} className="w-full gradient-secondary py-4 rounded-lg text-secondary-foreground font-semibold hover:scale-105 transition-transform duration-300 purple-glow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 font-primary">
                   <Send className="w-5 h-5" />
-                  {isLoading ? 'Wird gesendet...' : 'Send Message'}
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>}
           </div>
