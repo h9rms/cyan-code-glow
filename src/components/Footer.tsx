@@ -1,8 +1,6 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-background/95 backdrop-blur-sm border-t border-glass-border">
+  return <footer className="bg-background/95 backdrop-blur-sm border-t border-glass-border">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
@@ -15,27 +13,14 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
               <Github className="w-5 h-5" />
             </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              <Linkedin className="w-5 h-5" />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              
             </a>
-            <a 
-              href="mailto:contact@example.com"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              <Mail className="w-5 h-5" />
+            <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              
             </a>
           </div>
         </div>
@@ -46,8 +31,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
