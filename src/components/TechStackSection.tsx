@@ -81,7 +81,7 @@ const TechStackSection = () => {
             Modern Development Tools
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {modernTools.map((tool, index) => <div key={index} className="glass-card glass-card-hover p-6 rounded-xl group relative overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+            {modernTools.map((tool, index) => <div key={index} className="glass-card glass-card-hover p-6 rounded-xl group relative overflow-hidden">
                 {tool.featured && <div className="absolute top-4 right-4">
                     <Star className="w-5 h-5 text-yellow-400 fill-current" />
                   </div>}
@@ -116,7 +116,7 @@ const TechStackSection = () => {
             Core Technologies
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {coreSkills.map((skill, index) => <div key={index} className="glass-card glass-card-hover p-4 rounded-xl text-center group animate-fade-in" style={{ animationDelay: `${index * 80}ms` }}>
+            {coreSkills.map((skill, index) => <div key={index} className="glass-card glass-card-hover p-4 rounded-xl text-center group">
                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {skill.icon}
                 </div>

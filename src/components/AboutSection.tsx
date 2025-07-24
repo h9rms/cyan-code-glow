@@ -41,7 +41,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-primary mb-4 bg-gradient-primary bg-clip-text text-transparent">
             About Me
           </h2>
@@ -58,8 +58,7 @@ const AboutSection = () => {
               {timeline.map((item, index) => (
                 <div 
                   key={index} 
-                  className="flex items-start space-x-4 group animate-fade-in"
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className="flex items-start space-x-4 group"
                 >
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
                     <item.icon className="w-6 h-6 text-primary" />
@@ -78,15 +77,14 @@ const AboutSection = () => {
 
           {/* Skills */}
           <div>
-            <h3 className="text-2xl font-bold font-primary mb-6 text-foreground animate-fade-in">
+            <h3 className="text-2xl font-bold font-primary mb-6 text-foreground">
               Technical Skills
             </h3>
             <div className="space-y-4">
               {skills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="group animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="group"
                 >
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-medium font-secondary text-foreground">{skill.name}</span>

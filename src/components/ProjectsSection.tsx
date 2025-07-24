@@ -42,7 +42,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Featured Project */}
-        <div className="mb-16 animate-fade-in">
+        <div className="mb-16">
           <div className="glass-card glass-card-hover p-8 rounded-xl overflow-hidden relative">
             <div className="absolute top-6 right-6 z-10">
               <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-400/30">

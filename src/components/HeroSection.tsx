@@ -26,7 +26,7 @@ const HeroSection = () => {
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full animate-float-particle opacity-60"
+            className="absolute w-1 h-1 bg-primary rounded-full opacity-60"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
