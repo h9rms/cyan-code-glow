@@ -26,7 +26,7 @@ const HeroSection = () => {
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full opacity-60"
+            className="absolute w-1 h-1 bg-primary rounded-full particle opacity-60"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -67,14 +67,14 @@ const HeroSection = () => {
         </div>
 
         {/* Floating code snippets */}
-        <div className="absolute top-20 left-10 glass-morphism p-4 rounded-lg text-sm font-primary text-primary opacity-70 animate-float hidden lg:block">
+        <div className="absolute top-20 left-10 glass-morphism p-4 rounded-lg text-sm font-primary text-primary opacity-70 floating-animation hidden lg:block">
           <div>const developer = &#123;</div>
           <div className="ml-2">name: "Harmandeep",</div>
           <div className="ml-2">location: "Frankfurt"</div>
           <div>&#125;;</div>
         </div>
 
-        <div className="absolute bottom-32 right-10 glass-morphism p-4 rounded-lg text-sm font-primary text-secondary opacity-70 animate-float hidden lg:block" style={{ animationDelay: '2s' }}>
+        <div className="absolute bottom-32 right-10 glass-morphism p-4 rounded-lg text-sm font-primary text-secondary opacity-70 floating-animation hidden lg:block" style={{ animationDelay: '2s' }}>
           <div>npm run build</div>
           <div className="text-green-400">✓ Build successful</div>
         </div>

@@ -37,7 +37,6 @@ const AboutSection = () => {
     { name: "Git/GitHub", level: 90 }
   ];
 
-
   return (
     <section id="about" className="py-20 px-6 relative">
       <div className="max-w-6xl mx-auto">
