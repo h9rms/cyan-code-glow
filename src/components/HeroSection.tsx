@@ -39,17 +39,23 @@ const HeroSection = () => {
 
       {/* Main content */}
       <div className="relative z-30 max-w-4xl mx-auto text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-bold font-primary mb-8 bg-gradient-primary bg-clip-text text-transparent">
-          Harmandeep Singh
-        </h1>
-        <div className="text-xl md:text-2xl text-secondary-foreground mb-6 font-secondary min-h-[2rem]">
+        <div className="mb-8">
+          <span className="text-4xl md:text-6xl font-bold text-foreground font-primary">Hi, I'm</span>
+          <br />
+          <span className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent font-primary">Hermann</span>
+        </div>
+        
+        <div className="text-xl md:text-2xl text-muted-foreground mb-6 font-secondary min-h-[2rem]">
           <span className="typing-animation">{displayText}</span>
           <span className="animate-pulse">|</span>
         </div>
+        
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-secondary leading-relaxed">
-          Passionate about creating innovative web solutions with modern technologies. 
-          I bring ideas to life through clean code and thoughtful design.
+          Crafting exceptional digital experiences with modern technologies.
+          <br />
+          Specialized in React, Node.js, and cutting-edge web development.
         </p>
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -69,7 +75,7 @@ const HeroSection = () => {
         {/* Floating code snippets */}
         <div className="absolute top-20 left-10 glass-morphism p-4 rounded-lg text-sm font-primary text-primary opacity-70 floating-animation hidden lg:block">
           <div>const developer = &#123;</div>
-          <div className="ml-2">name: "Harmandeep",</div>
+          <div className="ml-2">name: "Hermann",</div>
           <div className="ml-2">location: "Frankfurt"</div>
           <div>&#125;;</div>
         </div>
