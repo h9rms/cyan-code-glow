@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Code, Zap, Star } from 'lucide-react';
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Full Stack Developer near Frankfurt";
-
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
@@ -16,9 +14,7 @@ const HeroSection = () => {
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 bg-gradient-dark" />
       
@@ -27,20 +23,14 @@ const HeroSection = () => {
       
       {/* Enhanced Particle System */}
       <div className="absolute inset-0">
-        {[...Array(100)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute particle opacity-80"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${6 + Math.random() * 6}s`,
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-            }}
-          />
-        ))}
+        {[...Array(100)].map((_, i) => <div key={i} className="absolute particle opacity-80" style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 8}s`,
+        animationDuration: `${6 + Math.random() * 6}s`,
+        width: `${Math.random() * 3 + 1}px`,
+        height: `${Math.random() * 3 + 1}px`
+      }} />)}
       </div>
 
       {/* Geometric Background Elements */}
@@ -85,20 +75,17 @@ const HeroSection = () => {
           
           {/* Tech Highlights */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map((tech) => (
-              <span key={tech} className="glass-morphism px-4 py-2 rounded-full text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
+            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-4 py-2 rounded-full text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
                 {tech}
-              </span>
-            ))}
+              </span>)}
           </div>
         </div>
 
         {/* Enhanced CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-          <Button 
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300"
-          >
+          <Button onClick={() => document.getElementById('projects')?.scrollIntoView({
+          behavior: 'smooth'
+        })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
             <span className="relative z-10 flex items-center gap-2">
               <Zap className="w-5 h-5" />
               View My Work
@@ -106,11 +93,9 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Button>
           
-          <Button 
-            variant="outline"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-8 py-4 text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300"
-          >
+          <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({
+          behavior: 'smooth'
+        })} className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-8 py-4 text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300">
             <span className="flex items-center gap-2">
               <Code className="w-5 h-5" />
               Get In Touch
@@ -119,9 +104,7 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-primary opacity-70" />
-        </div>
+        
       </div>
 
       {/* Enhanced Floating Code Elements */}
@@ -140,7 +123,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-32 right-10 glass-intense p-6 rounded-xl text-sm font-primary text-secondary opacity-80 floating-animation hidden xl:block border border-secondary/20 neon-purple-glow" style={{ animationDelay: '2s' }}>
+      <div className="absolute bottom-32 right-10 glass-intense p-6 rounded-xl text-sm font-primary text-secondary opacity-80 floating-animation hidden xl:block border border-secondary/20 neon-purple-glow" style={{
+      animationDelay: '2s'
+    }}>
         <div className="flex items-center gap-2 mb-3">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           <span className="text-xs text-muted-foreground">Build Status</span>
@@ -156,14 +141,14 @@ const HeroSection = () => {
       </div>
 
       {/* Additional Floating Element */}
-      <div className="absolute top-1/3 right-20 glass-morphism p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{ animationDelay: '4s' }}>
+      <div className="absolute top-1/3 right-20 glass-morphism p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{
+      animationDelay: '4s'
+    }}>
         <div className="font-mono">
           <div className="text-primary">// Innovation</div>
           <div className="text-foreground">creativity++;</div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
