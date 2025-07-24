@@ -38,7 +38,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 max-w-4xl mx-auto text-center px-4 animate-fade-in">
+      <div className="relative z-30 max-w-4xl mx-auto text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold font-primary mb-8 bg-gradient-primary bg-clip-text text-transparent">
           Harmandeep Singh
         </h1>
