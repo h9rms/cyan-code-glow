@@ -48,7 +48,7 @@ const HeroSection = () => {
 
         {/* Main Title */}
         <div className="mb-8 space-y-4">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-primary leading-none">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-primary leading-none">
             <span className="block text-foreground/90">Hi, I'm</span>
             <span className="block holographic-text">Hermann</span>
           </h1>
@@ -56,7 +56,7 @@ const HeroSection = () => {
 
         {/* Animated Subtitle */}
         <div className="mb-8">
-          <div className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-secondary mb-4 min-h-[3rem] flex items-center justify-center">
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-secondary mb-4 min-h-[2rem] sm:min-h-[2.5rem] md:min-h-[3rem] flex items-center justify-center">
             <span className="typing-animation">{displayText}</span>
             <span className="animate-pulse text-primary ml-1">|</span>
           </div>
@@ -64,7 +64,7 @@ const HeroSection = () => {
 
         {/* Enhanced Description */}
         <div className="mb-12 max-w-3xl mx-auto">
-          <p className="text-lg md:text-xl text-muted-foreground font-secondary leading-relaxed mb-6">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-secondary leading-relaxed mb-6 px-4 sm:px-0">
             Crafting exceptional digital experiences with modern technologies.
             <br />
             Specialized in React, Node.js, and cutting-edge web development.
@@ -72,7 +72,7 @@ const HeroSection = () => {
           
           {/* Tech Highlights */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-4 py-2 rounded-full text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
+            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
                 {tech}
               </span>)}
           </div>
@@ -82,9 +82,9 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
           <Button onClick={() => document.getElementById('projects')?.scrollIntoView({
           behavior: 'smooth'
-        })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
+        })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
             <span className="relative z-10 flex items-center gap-2">
-              <Zap className="w-5 h-5" />
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
               View My Work
             </span>
             <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -92,9 +92,9 @@ const HeroSection = () => {
           
           <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({
           behavior: 'smooth'
-        })} className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-8 py-4 text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300">
+        })} className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300">
             <span className="flex items-center gap-2">
-              <Code className="w-5 h-5" />
+              <Code className="w-4 h-4 sm:w-5 sm:h-5" />
               Get In Touch
             </span>
           </Button>
@@ -105,9 +105,9 @@ const HeroSection = () => {
       </div>
 
       {/* Enhanced Floating Code Elements */}
-      <div className="absolute top-20 left-10 glass-intense p-6 rounded-xl text-sm font-primary text-primary opacity-80 floating-animation hidden xl:block border border-primary/20 neon-glow">
+      <div className="absolute top-20 left-4 lg:left-10 glass-intense p-4 lg:p-6 rounded-xl text-xs lg:text-sm font-primary text-primary opacity-80 floating-animation hidden lg:block border border-primary/20 neon-glow">
         <div className="flex items-center gap-2 mb-3">
-          <Star className="w-4 h-4 text-yellow-400" />
+          <Star className="w-3 h-3 lg:w-4 lg:h-4 text-yellow-400" />
           <span className="text-xs text-muted-foreground">Senior Developer</span>
         </div>
         <div className="font-mono">
@@ -120,7 +120,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-32 right-10 glass-intense p-6 rounded-xl text-sm font-primary text-secondary opacity-80 floating-animation hidden xl:block border border-secondary/20 neon-purple-glow" style={{
+      <div className="absolute bottom-32 right-4 lg:right-10 glass-intense p-4 lg:p-6 rounded-xl text-xs lg:text-sm font-primary text-secondary opacity-80 floating-animation hidden lg:block border border-secondary/20 neon-purple-glow" style={{
       animationDelay: '2s'
     }}>
         <div className="flex items-center gap-2 mb-3">
@@ -138,7 +138,7 @@ const HeroSection = () => {
       </div>
 
       {/* Additional Floating Element */}
-      <div className="absolute top-1/3 right-20 glass-morphism p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{
+      <div className="absolute top-1/3 right-4 lg:right-20 glass-morphism p-3 lg:p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{
       animationDelay: '4s'
     }}>
         <div className="font-mono">
