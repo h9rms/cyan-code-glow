@@ -42,7 +42,7 @@ const HeroSection = () => {
         <div className="mb-8">
           <span className="text-4xl md:text-6xl font-bold text-foreground font-primary">Hi, I'm</span>
           <br />
-          <span className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent font-primary">Hermann</span>
+          <span className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent font-primary">Harmandeep</span>
         </div>
         
         <div className="text-xl md:text-2xl text-muted-foreground mb-6 font-secondary min-h-[2rem]">
@@ -75,7 +75,7 @@ const HeroSection = () => {
         {/* Floating code snippets */}
         <div className="absolute top-20 left-10 glass-morphism p-4 rounded-lg text-sm font-primary text-primary opacity-70 floating-animation hidden lg:block">
           <div>const developer = &#123;</div>
-          <div className="ml-2">name: "Hermann",</div>
+          <div className="ml-2">name: "Harmandeep",</div>
           <div className="ml-2">location: "Frankfurt"</div>
           <div>&#125;;</div>
         </div>
