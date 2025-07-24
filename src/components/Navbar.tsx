@@ -40,13 +40,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">hermsdevelopment</span>
+            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent font-primary">hermsdevelopment</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map(item => <button key={item.name} onClick={() => scrollToSection(item.href)} className="text-muted-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium hover:glow-cyan">
+              {navItems.map(item => <button key={item.name} onClick={() => scrollToSection(item.href)} className="text-muted-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium hover:glow-cyan font-primary">
                   {item.name}
                 </button>)}
             </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMobileMenuOpen && <div className="md:hidden glass-morphism backdrop-blur-xl border-b border-primary/20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map(item => <button key={item.name} onClick={() => scrollToSection(item.href)} className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200">
+            {navItems.map(item => <button key={item.name} onClick={() => scrollToSection(item.href)} className="text-muted-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 font-primary">
                 {item.name}
               </button>)}
           </div>

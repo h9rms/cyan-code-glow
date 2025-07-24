@@ -38,19 +38,19 @@ const HeroSection = () => {
       {/* Main content */}
       <div className="relative z-30 text-center px-6 max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-primary font-bold mb-6">
             <span className="block text-foreground mb-2">Hi, I'm</span>
             <span className="gradient-text text-6xl md:text-8xl">Hermann</span>
           </h1>
           
-          <div className="text-xl md:text-2xl text-muted-foreground h-8 font-mono">
+          <div className="text-xl md:text-2xl text-muted-foreground h-8 font-primary">
             <span className="border-r-2 border-primary pr-1">
               {displayText}
             </span>
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-secondary">
           Crafting exceptional digital experiences with modern technologies. 
           Specialized in React, Node.js, and cutting-edge web development.
         </p>
@@ -58,13 +58,13 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <button 
             onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="glass-card glass-card-hover px-8 py-4 rounded-lg text-primary border-primary/30 hover:border-primary/60 transition-all duration-300"
+            className="glass-card glass-card-hover px-8 py-4 rounded-lg text-primary border-primary/30 hover:border-primary/60 transition-all duration-300 font-primary"
           >
             View My Work
           </button>
           <button 
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="gradient-primary px-8 py-4 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow"
+            className="gradient-primary px-8 py-4 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow font-primary"
           >
             Get In Touch
           </button>
@@ -77,14 +77,14 @@ const HeroSection = () => {
       </div>
 
       {/* Code snippets floating */}
-      <div className="absolute top-20 left-10 glass-card p-4 rounded-lg text-sm font-mono text-primary opacity-70 floating-animation hidden lg:block">
+      <div className="absolute top-20 left-10 glass-card p-4 rounded-lg text-sm font-primary text-primary opacity-70 floating-animation hidden lg:block">
         <div>const developer = &#123;</div>
         <div className="ml-2">name: "Full Stack Dev",</div>
         <div className="ml-2">location: "Frankfurt"</div>
         <div>&#125;;</div>
       </div>
 
-      <div className="absolute bottom-32 right-10 glass-card p-4 rounded-lg text-sm font-mono text-secondary opacity-70 floating-animation hidden lg:block" style={{
+      <div className="absolute bottom-32 right-10 glass-card p-4 rounded-lg text-sm font-primary text-secondary opacity-70 floating-animation hidden lg:block" style={{
       animationDelay: '2s'
     }}>
         <div>npm run build</div>

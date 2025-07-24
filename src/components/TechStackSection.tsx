@@ -65,17 +65,17 @@ const TechStackSection = () => {
   return <section id="tech" className="py-20 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-primary">
             <span className="gradient-text">Tech Stack</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-secondary">
             Modern tools and technologies I use to build exceptional digital experiences
           </p>
         </div>
 
         {/* Modern Tools Grid */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center font-primary">
             Modern Development Tools
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,15 +89,15 @@ const TechStackSection = () => {
                     <ExternalLink className="w-6 h-6 text-white" />
                   </div>
                   
-                  <h4 className="text-xl font-semibold text-foreground mb-2">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 font-primary">
                     {tool.name}
                   </h4>
                   
-                  <span className="inline-block px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-3">
+                  <span className="inline-block px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-3 font-primary">
                     {tool.category}
                   </span>
                   
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm font-secondary">
                     {tool.description}
                   </p>
                 </div>
@@ -110,7 +110,7 @@ const TechStackSection = () => {
 
         {/* Core Skills */}
         <div>
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center font-primary">
             Core Technologies
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
@@ -118,7 +118,7 @@ const TechStackSection = () => {
                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {skill.icon}
                 </div>
-                <span className="text-sm font-medium text-foreground">
+                <span className="text-sm font-medium text-foreground font-primary">
                   {skill.name}
                 </span>
               </div>)}

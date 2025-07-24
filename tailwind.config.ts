@@ -77,7 +77,9 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				mono: ['JetBrains Mono', 'monospace']
+				mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+				primary: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+				secondary: ['Inter', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

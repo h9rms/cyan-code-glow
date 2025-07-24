@@ -43,16 +43,16 @@ const AboutSection = () => {
   return <section id="about" className="py-20 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-primary">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">A passionate developer near Frankfurt, Germany, dedicated to creating exceptional digital experiences with cutting-edge technologies.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-secondary">A passionate developer near Frankfurt, Germany, dedicated to creating exceptional digital experiences with cutting-edge technologies.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Timeline */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
+            <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3 font-primary">
               <Calendar className="w-6 h-6 text-primary" />
               My Journey
             </h3>
@@ -67,10 +67,10 @@ const AboutSection = () => {
                       <span className="text-primary font-bold text-lg">{item.year}</span>
                       <div className="h-px bg-gradient-primary flex-1"></div>
                     </div>
-                    <h4 className="text-xl font-semibold text-foreground mb-2">
+                    <h4 className="text-xl font-semibold text-foreground mb-2 font-primary">
                       {item.title}
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground font-secondary">
                       {item.description}
                     </p>
                   </div>
@@ -80,7 +80,7 @@ const AboutSection = () => {
 
           {/* Skills */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
+            <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3 font-primary">
               <Code className="w-6 h-6 text-secondary" />
               Technical Skills
             </h3>
@@ -88,8 +88,8 @@ const AboutSection = () => {
             <div className="space-y-6">
               {skills.map((skill, index) => <div key={index} className="glass-card p-6 rounded-xl">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-foreground font-semibold">{skill.name}</span>
-                    <span className="text-primary font-bold">{skill.level}%</span>
+                    <span className="text-foreground font-semibold font-primary">{skill.name}</span>
+                    <span className="text-primary font-bold font-primary">{skill.level}%</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
                     <div className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out" style={{
@@ -101,11 +101,11 @@ const AboutSection = () => {
             </div>
 
             <div className="glass-card p-6 rounded-xl mt-8">
-              <h4 className="text-xl font-semibold text-foreground mb-4">
+              <h4 className="text-xl font-semibold text-foreground mb-4 font-primary">
                 Currently Learning
               </h4>
               <div className="flex flex-wrap gap-2">
-                {["AI Engineering"].map(tech => <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm">
+                {["AI Engineering"].map(tech => <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-primary">
                     {tech}
                   </span>)}
               </div>
