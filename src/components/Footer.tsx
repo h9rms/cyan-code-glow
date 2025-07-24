@@ -17,11 +17,9 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-              <Linkedin className="w-5 h-5" />
+              
             </a>
-            <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-              <Mail className="w-5 h-5" />
-            </a>
+            
           </div>
         </div>
         
