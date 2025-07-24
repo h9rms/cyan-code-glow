@@ -133,7 +133,7 @@ const HeroSection = () => {
         <div className="font-mono">
           <div className="text-secondary">const</div>
           <div className="ml-2">developer = &#123;</div>
-          <div className="ml-4 text-foreground">name: <span className="text-green-400">"Harmandeep"</span>,</div>
+          <div className="ml-4 text-foreground">name: <span className="text-green-400">"Hermann"</span>,</div>
           <div className="ml-4 text-foreground">location: <span className="text-green-400">"Frankfurt"</span>,</div>
           <div className="ml-4 text-foreground">skills: <span className="text-yellow-400">["React", "Node.js"]</span></div>
           <div className="ml-2">&#125;;</div>
