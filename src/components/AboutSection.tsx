@@ -1,3 +1,4 @@
+
 import { Calendar, Code, Briefcase, GraduationCap } from 'lucide-react';
 
 const AboutSection = () => {
@@ -104,11 +105,9 @@ const AboutSection = () => {
                 Currently Learning
               </h4>
               <div className="flex flex-wrap gap-2">
-                {["AI Engineering", "Machine Learning", "Cloud Architecture"].map(tech => (
-                  <span key={tech} className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-secondary hover:bg-accent/30 hover:scale-105 transition-all duration-200">
-                    {tech}
-                  </span>
-                ))}
+                <span className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-secondary hover:bg-accent/30 hover:scale-105 transition-all duration-200">
+                  AI Engineering
+                </span>
               </div>
             </div>
           </div>
