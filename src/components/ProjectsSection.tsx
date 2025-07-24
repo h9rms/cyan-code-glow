@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Star } from 'lucide-react';
+import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 const ProjectsSection = () => {
   const featuredProject = {
     title: "Wanderlust Grid Blog",
@@ -28,6 +29,12 @@ const ProjectsSection = () => {
     githubUrl: "#",
     status: "Completed"
   }];
+
+  const headerAnimation = useScrollAnimation({ animation: 'fadeIn' });
+  const featuredAnimation = useScrollAnimation({ animation: 'slideLeft', delay: 200 });
+  const projectsAnimations = useStaggeredAnimation(otherProjects.length, 150);
+  const ctaAnimation = useScrollAnimation({ animation: 'scaleIn', delay: 400 });
+
   return <section id="projects" className="py-20 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">

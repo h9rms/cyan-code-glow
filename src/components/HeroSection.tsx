@@ -1,10 +1,17 @@
-import { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
-import heroBackground from '@/assets/hero-bg.jpg';
+import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Full Stack Developer near Frankfurt";
+  
+  const titleAnimation = useScrollAnimation({ animation: 'fadeIn', delay: 200 });
+  const subtitleAnimation = useScrollAnimation({ animation: 'slideUp', delay: 400 });
+  const descriptionAnimation = useScrollAnimation({ animation: 'fadeIn', delay: 600 });
+  const buttonsAnimation = useScrollAnimation({ animation: 'slideUp', delay: 800 });
+
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
@@ -14,80 +21,84 @@ const HeroSection = () => {
       return () => clearTimeout(timer);
     }
   }, [currentIndex, fullText]);
-  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0" style={{
-      backgroundImage: `url(${heroBackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
-    }} />
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background with parallax effect */}
+      <div className="absolute inset-0 bg-gradient-dark" />
       
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background z-10" />
-      
-      {/* Floating particles */}
-      <div className="particles-container z-20">
-        {[...Array(30)].map((_, i) => <div key={i} className="particle" style={{
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 8}s`,
-        animationDuration: `${8 + Math.random() * 4}s`
-      }} />)}
+      {/* Animated particles */}
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary rounded-full animate-float-particle opacity-60"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
+          />
+        ))}
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 text-center px-6 max-w-4xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-primary font-bold mb-6">
-            <span className="block text-foreground mb-2">Hi,I'm</span>
-            <span className="gradient-text text-6xl md:text-8xl">Hermann</span>
-          </h1>
-          
-          <div className="text-xl md:text-2xl text-muted-foreground h-8 font-primary">
-            <span className="border-r-2 border-primary pr-1">
-              {displayText}
-            </span>
-          </div>
+      <div className="relative z-30 max-w-4xl mx-auto text-center px-4">
+        <h1 
+          ref={titleAnimation.ref}
+          className={`text-5xl md:text-7xl font-bold font-primary mb-8 bg-gradient-primary bg-clip-text text-transparent ${titleAnimation.className}`}
+        >
+          Harmandeep Singh
+        </h1>
+        <div 
+          ref={subtitleAnimation.ref}
+          className={`text-xl md:text-2xl text-secondary-foreground mb-6 font-secondary min-h-[2rem] ${subtitleAnimation.className}`}
+        >
+          <span className="typing-animation">{displayText}</span>
+          <span className="animate-pulse">|</span>
         </div>
-
-        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-secondary">
-          Crafting exceptional digital experiences with modern technologies. 
-          Specialized in React, Node.js, and cutting-edge web development.
+        <p 
+          ref={descriptionAnimation.ref}
+          className={`text-lg text-muted-foreground mb-8 max-w-2xl mx-auto font-secondary leading-relaxed ${descriptionAnimation.className}`}
+        >
+          Passionate about creating innovative web solutions with modern technologies. 
+          I bring ideas to life through clean code and thoughtful design.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <button onClick={() => document.querySelector('#projects')?.scrollIntoView({
-          behavior: 'smooth'
-        })} className="glass-card glass-card-hover px-8 py-4 rounded-lg text-primary border-primary/30 hover:border-primary/60 transition-all duration-300 font-primary">
+        <div 
+          ref={buttonsAnimation.ref}
+          className={`flex flex-col sm:flex-row gap-4 justify-center ${buttonsAnimation.className}`}
+        >
+          <Button 
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg font-medium transform hover:scale-105 transition-transform"
+          >
             View My Work
-          </button>
-          <button onClick={() => document.querySelector('#contact')?.scrollIntoView({
-          behavior: 'smooth'
-        })} className="gradient-primary px-8 py-4 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow font-primary">
+          </Button>
+          <Button 
+            variant="outline"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium transform hover:scale-105 transition-transform"
+          >
             Get In Touch
-          </button>
+          </Button>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          
+        {/* Floating code snippets */}
+        <div className="absolute top-20 left-10 glass-morphism p-4 rounded-lg text-sm font-primary text-primary opacity-70 animate-float hidden lg:block">
+          <div>const developer = &#123;</div>
+          <div className="ml-2">name: "Harmandeep",</div>
+          <div className="ml-2">location: "Frankfurt"</div>
+          <div>&#125;;</div>
+        </div>
+
+        <div className="absolute bottom-32 right-10 glass-morphism p-4 rounded-lg text-sm font-primary text-secondary opacity-70 animate-float hidden lg:block" style={{ animationDelay: '2s' }}>
+          <div>npm run build</div>
+          <div className="text-green-400">✓ Build successful</div>
         </div>
       </div>
-
-      {/* Code snippets floating */}
-      <div className="absolute top-20 left-10 glass-card p-4 rounded-lg text-sm font-primary text-primary opacity-70 floating-animation hidden lg:block">
-        <div>const developer = &#123;</div>
-        <div className="ml-2">name: "Full Stack Dev",</div>
-        <div className="ml-2">location: "Frankfurt"</div>
-        <div>&#125;;</div>
-      </div>
-
-      <div className="absolute bottom-32 right-10 glass-card p-4 rounded-lg text-sm font-primary text-secondary opacity-70 floating-animation hidden lg:block" style={{
-      animationDelay: '2s'
-    }}>
-        <div>npm run build</div>
-        <div className="text-green-400">✓ Build successful</div>
-      </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

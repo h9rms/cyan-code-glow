@@ -1,4 +1,5 @@
 import { ExternalLink, Star } from 'lucide-react';
+import { useScrollAnimation, useStaggeredAnimation } from '@/hooks/useScrollAnimation';
 const TechStackSection = () => {
   const modernTools = [{
     name: "Lovable",
@@ -62,6 +63,12 @@ const TechStackSection = () => {
     name: "HTML5",
     icon: "🌐"
   }];
+
+  const headerAnimation = useScrollAnimation({ animation: 'fadeIn' });
+  const toolsAnimations = useStaggeredAnimation(modernTools.length, 100);
+  const skillsHeaderAnimation = useScrollAnimation({ animation: 'slideRight', delay: 200 });
+  const skillsAnimations = useStaggeredAnimation(coreSkills.length, 80);
+
   return <section id="tech" className="py-20 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
