@@ -72,7 +72,7 @@ const HeroSection = () => {
           
           {/* Tech Highlights */}
           <div className="flex flex-wrap justify-center gap-1 xs:gap-2 sm:gap-3 mb-6 sm:mb-8">
-            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
+            {['React', 'TypeScript', 'Node.js', 'Next.js'].map(tech => <span key={tech} className="glass-morphism px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
                 {tech}
               </span>)}
           </div>
