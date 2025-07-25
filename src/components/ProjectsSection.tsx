@@ -50,10 +50,11 @@ const ProjectsSection = () => {
         {/* Featured Project */}
         <div className="mb-16">
           <div className="glass-card glass-card-hover p-4 sm:p-6 md:p-8 rounded-xl overflow-hidden relative">
-            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-10">
-              <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-400/30">
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
-                <span className="text-xs sm:text-sm font-medium">Featured</span>
+            {/* Featured Tag - only show on larger screens */}
+            <div className="absolute top-6 right-6 z-10 hidden md:block">
+              <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-400/30">
+                <Star className="w-4 h-4 fill-current" />
+                <span className="text-sm font-medium">Featured</span>
               </div>
             </div>
 
