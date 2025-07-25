@@ -64,38 +64,40 @@ const HeroSection = () => {
 
         {/* Enhanced Description */}
         <div className="mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto">
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-secondary leading-relaxed mb-6 px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-secondary leading-relaxed mb-4 sm:mb-6 px-4 sm:px-6 md:px-0">
             Crafting exceptional digital experiences with modern technologies.
-            <br />
-            Specialized in React, Node.js, and cutting-edge web development.
+            <br className="hidden sm:block" />
+            <span className="block sm:inline">Specialized in React, Node.js, and cutting-edge web development.</span>
           </p>
           
           {/* Tech Highlights */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
+          <div className="flex flex-wrap justify-center gap-1 xs:gap-2 sm:gap-3 mb-6 sm:mb-8">
+            {['React', 'TypeScript', 'Node.js', 'Next.js', 'AI Integration'].map(tech => <span key={tech} className="glass-morphism px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-medium text-primary border border-primary/20 hover:neon-glow transition-all duration-300 hover:scale-105">
                 {tech}
               </span>)}
           </div>
         </div>
 
         {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 md:mb-16">
           <Button onClick={() => document.getElementById('projects')?.scrollIntoView({
           behavior: 'smooth'
-        })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
+        })} className="group relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-primary-foreground px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold rounded-lg neon-glow hover:neon-glow-intense transition-all duration-300">
             <span className="relative z-10 flex items-center gap-2">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
-              View My Work
+              <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              <span className="hidden xs:inline">View My Work</span>
+              <span className="xs:hidden">Work</span>
             </span>
             <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Button>
           
           <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({
           behavior: 'smooth'
-        })} className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300">
+        })} className="group glass-morphism border-primary/30 text-foreground hover:text-primary px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:glass-intense transition-all duration-300">
             <span className="flex items-center gap-2">
-              <Code className="w-4 h-4 sm:w-5 sm:h-5" />
-              Get In Touch
+              <Code className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              <span className="hidden xs:inline">Get In Touch</span>
+              <span className="xs:hidden">Contact</span>
             </span>
           </Button>
         </div>
@@ -105,43 +107,43 @@ const HeroSection = () => {
       </div>
 
       {/* Enhanced Floating Code Elements */}
-      <div className="absolute top-20 left-4 lg:left-10 glass-intense p-4 lg:p-6 rounded-xl text-xs lg:text-sm font-primary text-primary opacity-80 floating-animation hidden lg:block border border-primary/20 neon-glow">
-        <div className="flex items-center gap-2 mb-3">
-          <Star className="w-3 h-3 lg:w-4 lg:h-4 text-yellow-400" />
+      <div className="absolute top-16 sm:top-20 left-2 sm:left-4 lg:left-10 glass-intense p-2 sm:p-4 lg:p-6 rounded-xl text-xs sm:text-xs lg:text-sm font-primary text-primary opacity-80 floating-animation hidden md:block border border-primary/20 neon-glow">
+        <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
+          <Star className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-yellow-400" />
           <span className="text-xs text-muted-foreground">Senior Developer</span>
         </div>
-        <div className="font-mono">
+        <div className="font-mono text-xs sm:text-xs lg:text-sm">
           <div className="text-secondary">const</div>
-          <div className="ml-2">developer = &#123;</div>
-          <div className="ml-4 text-foreground">name: <span className="text-green-400">"Hermann"</span>,</div>
-          <div className="ml-4 text-foreground">location: <span className="text-green-400">"Frankfurt"</span>,</div>
-          <div className="ml-4 text-foreground">skills: <span className="text-yellow-400">["React", "Node.js"]</span></div>
-          <div className="ml-2">&#125;;</div>
+          <div className="ml-1 sm:ml-2">developer = &#123;</div>
+          <div className="ml-2 sm:ml-4 text-foreground">name: <span className="text-green-400">"Hermann"</span>,</div>
+          <div className="ml-2 sm:ml-4 text-foreground">location: <span className="text-green-400">"Frankfurt"</span>,</div>
+          <div className="ml-2 sm:ml-4 text-foreground">skills: <span className="text-yellow-400">["React", "Node.js"]</span></div>
+          <div className="ml-1 sm:ml-2">&#125;;</div>
         </div>
       </div>
 
-      <div className="absolute bottom-32 right-4 lg:right-10 glass-intense p-4 lg:p-6 rounded-xl text-xs lg:text-sm font-primary text-secondary opacity-80 floating-animation hidden lg:block border border-secondary/20 neon-purple-glow" style={{
+      <div className="absolute bottom-24 sm:bottom-32 right-2 sm:right-4 lg:right-10 glass-intense p-2 sm:p-4 lg:p-6 rounded-xl text-xs sm:text-xs lg:text-sm font-primary text-secondary opacity-80 floating-animation hidden md:block border border-secondary/20 neon-purple-glow" style={{
       animationDelay: '2s'
     }}>
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+        <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse" />
           <span className="text-xs text-muted-foreground">Build Status</span>
         </div>
-        <div className="font-mono">
+        <div className="font-mono text-xs sm:text-xs lg:text-sm">
           <div className="text-muted-foreground">$ npm run build</div>
           <div className="text-green-400 flex items-center gap-1 mt-1">
             ✓ Build successful
             <span className="text-xs text-muted-foreground">(2.3s)</span>
           </div>
-          <div className="text-cyan-400 text-xs mt-2">Ready for deployment 🚀</div>
+          <div className="text-cyan-400 text-xs mt-1 sm:mt-2">Ready for deployment 🚀</div>
         </div>
       </div>
 
       {/* Additional Floating Element */}
-      <div className="absolute top-1/3 right-4 lg:right-20 glass-morphism p-3 lg:p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{
+      <div className="absolute top-1/3 right-2 sm:right-4 lg:right-20 glass-morphism p-2 sm:p-3 lg:p-4 rounded-lg text-xs font-primary text-accent opacity-60 floating-animation hidden lg:block border border-accent/20" style={{
       animationDelay: '4s'
     }}>
-        <div className="font-mono">
+        <div className="font-mono text-xs sm:text-xs lg:text-sm">
           <div className="text-primary">// Innovation</div>
           <div className="text-foreground">creativity++;</div>
         </div>
