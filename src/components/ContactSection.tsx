@@ -107,7 +107,12 @@ const ContactSection = () => {
               <p className="text-muted-foreground mb-6 font-secondary">
                 Looking for professional freelance services? I'm available for projects on Upwork with verified expertise and excellent client reviews.
               </p>
-              <a href="#" className="inline-flex items-center gap-2 gradient-primary px-6 py-3 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow font-primary">
+              <a 
+                href="https://www.upwork.com/freelancers/~012c057ae41dd3b8ae" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 gradient-primary px-6 py-3 rounded-lg text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 neon-glow font-primary"
+              >
                 <ExternalLink className="w-4 h-4" />
                 View Upwork Profile
               </a>
